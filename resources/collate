@@ -1,0 +1,13 @@
+#!/usr/env zsh
+
+[[ -d ./tmp ]] || mkdir ./tmp
+
+find . -type f -regex '.*md' ! -name 'README.md' | while read -d $'\0' file; do
+	cp -ar "$file" tmp/
+	pmark tmp/"$file"
+done
+
+pdfunite $(find tmp/ -type f | sort) resources/Master\ Document.pdf
+
+rm -rf tmp/
+
