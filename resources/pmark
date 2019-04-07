@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+function pmark() {
+	for element in "$@"; do
+		var="$element:t:r"
+		pandoc "$element" --listings -H "$HOME"/Documents/latex_formatting/coding.tex --variable urlcolor=blue -o "$var".pdf
+	done
+}
