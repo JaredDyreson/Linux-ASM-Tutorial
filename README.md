@@ -11,3 +11,42 @@ function pmark() {
 	done
 }
 ```
+
+## Roadmap
+
+- Introduction to Linux ASM
+- Compiling and the Linker
+- Arithmetic Computation
+- Bitwise Operations
+- System Calls
+	- creating a print subroutine
+	- use printf after creating print subroutine
+- File I/O
+	- cat clone
+- Positional Offsets
+	- xlat instruction
+- Loops
+	- for
+	- while
+	- do
+	- do while
+	- until
+- Structures
+- Writing a decryption algorithm
+	- Satallite Project
+		- xorring bits
+		- file handling
+		- printing
+
+
+
+
+
+- Extended Practice
+	- summing the array of integers and finding it's average
+	- swap the bits of a number and print each stage until the number becomes zero
+	- recreate the following UNIX utilities
+		- cat
+		- touch
+		- stat (size of file in bytes, kb, mb, gb...)
+

@@ -1,13 +1,21 @@
-#!/usr/env zsh
+#!/usr/bin/env zsh
 
+function helper() {
+	cp -ar "$1" tmp/
+	pmark tmp/"$1"
+}
+
+
+[[ -d $(git rev-parse --show-toplevel) ]] || cd "$(git rev-parse --show-toplevel)"
 [[ -d ./tmp ]] || mkdir ./tmp
 
-find . -type f -regex '.*md' ! -name 'README.md' | while read -d $'\0' file; do
+find . -type f -name '*.md' | while read file; do
 	cp -ar "$file" tmp/
 	pmark tmp/"$file"
 done
 
-pdfunite $(find tmp/ -type f | sort) resources/Master\ Document.pdf
 
-rm -rf tmp/
+#pdfunite $(find tmp/ -type f | sort) resources/Master\ Document.pdf
+
+#rm -rf tmp/
 
